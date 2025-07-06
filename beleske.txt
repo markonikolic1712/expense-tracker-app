@@ -1,0 +1,39 @@
+https://www.youtube.com/watch?v=hNPwdOZ3qFU&t=906s
+
+https://github.com/bradtraversy/vue-expense-tracker
+
+Kreiranje projekta:
+	- kreiram folder expense-tracker-app u kome ce biti vue aplikacija.
+	- u VS code se pozicioniram u expense-tracker-app folder
+	- 'npx create-vue@latest .' - komanda sa kojom se kreieira vue projekat. Sa . se postize to da se ffajlovi kreiraju u trenutnom folderu u kojem smo pozicionirani
+	- u toku kreiranja projekta na pitanja se odgovara:
+		- 'Package name:' - 'expense-tracker-app' 
+		- na ostala pitanja se odgovara sa No tj. ne cekiraju se opcije
+	- 'npm install' da se instaliraju potrebne biblioteke nakon kreiranja projekta
+	- npm run dev' - komanda za pokretanje aplikacije na dev serveru
+	- aplikacija se pokrece na http://localhost:5174/
+
+Aplikacija se pokrece uz pomoc vite i to na lokalnom dev serveru. Vite koristi hot reload.
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
