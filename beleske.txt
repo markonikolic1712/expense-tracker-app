@@ -1,0 +1,69 @@
+https://www.youtube.com/watch?v=hNPwdOZ3qFU&t=906s
+
+https://github.com/bradtraversy/vue-expense-tracker
+
+Kreiranje projekta:
+	- kreiram folder expense-tracker-app u kome ce biti vue aplikacija.
+	- u VS code se pozicioniram u expense-tracker-app folder
+	- 'npx create-vue@latest .' - komanda sa kojom se kreieira vue projekat. Sa . se postize to da se ffajlovi kreiraju u trenutnom folderu u kojem smo pozicionirani
+	- u toku kreiranja projekta na pitanja se odgovara:
+		- 'Package name:' - 'expense-tracker-app' 
+		- na ostala pitanja se odgovara sa No tj. ne cekiraju se opcije
+	- 'npm install' da se instaliraju potrebne biblioteke nakon kreiranja projekta
+	- 'npm run dev' - komanda za pokretanje aplikacije na dev serveru
+	- aplikacija se pokrece na http://localhost:5174/
+
+Aplikacija se pokrece uz pomoc vite i to na lokalnom dev serveru. Vite koristi hot reload.
+
+U aplikaciji moze da se doda nova transakcija i tada se upisuje opis transakcije i iznos. Kada se kreia nova transakcija radi se i verifikacija unetih poddataka i za to se koristi biblioteka vue-toastification.
+Sa @next se instalira toastification V2 i ova verzija se koristi samo za Vue 3. Za Vue 2 se koristi 'npm install vue-toastification'.
+- npm install vue-toastification@next
+
+import Tast-a se dodajue u main.js
+----------------------- main.js - pocetak -----------------------
+import { createApp } from "vue";
+import Toast from 'vue-toastification';
+import 'vue-toastification/dist/index.css'; // uvozi se css za Toast
+import "./assets/style.css"; // ovo mora dabude ispod Toast importa
+import App from "./App.vue";
+
+const app = createApp(App);
+app.use(Toast);
+app.mount("#app");
+----------------------- main.js - kraj -----------------------
+
+komponenta AddTransactio.vue u kojoj je forma za unos podataka za transakciju:
+import { useToast } from 'vue-toastification';
+
+const text = ref('');
+const amount = ref('');
+const toast = useToast();
+
+// metoda koja hendluje klik na submit dugme
+const onSubmit = () => {
+	// ako su oba polja prazna ili je neko od njih prazno prikazuje se toast error poruka
+  if(!text.value || !amount.value) {
+    toast.error('Both fields must be filled.');
+    return;
+  }
+  // ciste se input polja
+  text.value = '';
+  amount.value = '';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
