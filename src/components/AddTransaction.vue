@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits, ref } from "vue";
+import { defineEmits, ref } from "vue";
 import { useToast } from 'vue-toastification';
 
 const emit = defineEmits(['transaction-submitted'])

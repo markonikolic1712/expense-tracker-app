@@ -18,7 +18,7 @@
   </ul>
 </template>
 <script setup>
-import { defineProps, onMounted } from "vue";
+import { defineProps, defineEmits } from "vue";
 
 const props = defineProps({
   transactions: {
@@ -26,10 +26,10 @@ const props = defineProps({
     required: true
   },
 });
+const emit = defineEmits(['transaction-deleted']);
 
 const removeTransaction = (t) => {
-  const index = props.transactions.indexOf(t)
-  props.transactions.splice(index, 1)
+  emit('transaction-deleted', t);
 }
 
 
